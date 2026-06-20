@@ -1,4 +1,5 @@
-from time import*
+from time import sleep
+from turtle import*
 
 class Portfolio:
     def __init__(self):
@@ -18,6 +19,67 @@ class Portfolio:
         with open(name_file, "r", encoding="utf-8") as myfile:
             content = myfile.read()
             return content
+    
+    def intro(self):
+        speed(0)
+        hideturtle()
+        screen = Screen()
+        screen.bgcolor("#1a1a2e")
+        color("cyan")
+        fillcolor("#3f354a")
+        pensize(1)
+        penup()
+        goto(-150,-80)
+        pendown()
+        begin_fill()
+        for i in range(4):
+            forward(200)
+            left(90)
+        end_fill()
+        begin_fill()
+        forward(200)
+        left(35)
+        forward(70)
+        left(55)
+        forward(200)
+        left(90)
+        forward(200)
+        left(35)
+        forward(69)
+        end_fill()
+        left(145)
+        forward(200)
+        left(35)
+        forward(70)
+        left(180)
+        forward(70)
+        left(55)
+        forward(200)
+        penup()
+        goto(-125, 60)
+        pendown()
+        speed(5)
+        color("white")
+        pensize(3)
+        left(65)
+        forward(75)
+        right(128)
+        forward(75)
+        penup()
+        goto(25, -5)
+        pendown()
+        right(26.8)
+        forward(76)
+        penup()
+        goto(-25,-145)
+        pendown()
+        write("MY PORTFOLIO", align="center", font=("Arial", 30, "bold"))
+
+        sleep(1)
+        
+        bye()
+
+        self.hello()
 
     def hello(self):
         print("="*35)
@@ -62,7 +124,6 @@ class Portfolio:
                 print(text)
                 print("="*40)
                 input("\n(Чтобы выйти в меню нажмите Enter)")
-                self.choicement()
             else:
                 print("\nОшибка! Такого раздела не существует.")
 
@@ -70,4 +131,4 @@ class Portfolio:
 
 if __name__ == "__main__":
     app = Portfolio()
-    app.hello()
+    app.intro()
