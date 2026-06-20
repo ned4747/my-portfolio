@@ -1,3 +1,4 @@
+import os 
 from time import sleep
 from turtle import*
 
@@ -16,10 +17,13 @@ class Portfolio:
         }       #Тут скоро будут списки файлов
 
     def read_file(self, name_file):
-        with open(name_file, "r", encoding="utf-8") as myfile:
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        full_path = os.path.join(current_dir, name_file)
+        
+        with open(full_path, "r", encoding="utf-8") as myfile:
             content = myfile.read()
             return content
-    
+            
     def intro(self):
         speed(0)
         hideturtle()
